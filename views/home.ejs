@@ -5,13 +5,16 @@
     <hr>
     <h2> Article Section </h2>
     <ul>
+<% if(locals.newpost){ %>
     <% newpost.forEach(function(data){ %>
 
       <li> <h1> <%= data.title %></h1>
         <p><%=data.body.substring(0,100) +" ..." %> <a href="/posts/<%=data.title %>">Read more</a></p>
 
     </li> 
-    <% }); %>
+    <% }); } else { %>
+<h1> Refresh the page ... </h1>
+<% } %>
 </ul>
 </div>
     
